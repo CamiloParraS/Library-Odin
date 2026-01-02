@@ -65,6 +65,10 @@ function createGrid() {
 
 function closeForm() {
   form.classList.remove("active");
+  document.getElementById("bookTitle").value = "";
+  document.getElementById("bookAuthor").value = "";
+  document.getElementById("bookPages").value = "";
+  document.getElementById("alreadyRead").checked = false;
 }
 
 // I am Messy, the add book button
