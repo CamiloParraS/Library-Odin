@@ -13,7 +13,75 @@
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <h1>Hello, world!</h1>
+        <header class="header">
+            <div class="container">
+                <h1>Library i guess</h1>
+                <button id="showFormBtn" class="addBtn">New Book</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="stats">
+                <h1>INFO or Stats</h1>
+                <p>
+                    Here some info should appear like total books read, books
+                    not read yet, totla pages read
+                </p>
+            </div>
+            <div class="bookGrid">
+                <div>
+                    <p>Empty or something</p>
+                </div>
+                <div>
+                    <p>Empty or something</p>
+                </div>
+                <div>
+                    <p>Empty or something</p>
+                </div>
+                <div>
+                    <p>Empty or something</p>
+                </div>
+                <div>
+                    <p>Empty or something</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- From Uiverse.io by satyamchaudharydev -->
+        <div id="newBookForm" class="newBook">
+            <div class="card">
+                <span class="card_title">Add New Book</span>
+                <div class="card__form">
+                    <input
+                        placeholder="Book Title"
+                        type="text"
+                        id="bookTitle"
+                    />
+                    <input
+                        placeholder="Book Author"
+                        type="text"
+                        id="bookAuthor"
+                    />
+                    <input
+                        placeholder="Book Pages"
+                        type="number"
+                        id="bookPages"
+                    />
+
+                    <div class="isRead">
+                        <label for="alreadyRead">Already Read?</label>
+                        <input
+                            type="checkbox"
+                            id="alreadyRead"
+                            class="checkbox"
+                        />
+                    </div>
+                    <button class="addBook">Add Book</button>
+                    <button class="cancelBook" id="closeFormBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <script src="app.js"></script>
     </body>
 </html>
