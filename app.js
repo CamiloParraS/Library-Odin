@@ -58,11 +58,14 @@ function createGrid() {
     const bookCard = document.createElement("div");
     bookCard.classList.add("card");
 
+    const statusClass = book.read ? "is-read" : "not-read";
+    const statusText = book.read ? "Read" : "Not Read";
+
     bookCard.innerHTML = `
-    <h3 class="card_title">${book.title}</h3>
+    <h3 class="card_title">'${book.title}'</h3>
     <p class="card__content"><strong>Author:</strong> ${book.author}</p>
     <p class="card__content"><strong>Pages:</strong> ${book.pages}</p>
-    <button class="status-btn">${book.read ? "Read" : "Not Read"}</button>`;
+    <button class="status-btn ${statusClass}">${statusText}</button>`;
 
     bookGrid.appendChild(bookCard);
   });
