@@ -26,7 +26,7 @@ body {
     font-weight: 900;
 }
 
-.add-btn {
+.addBtn {
     border: 0;
     background: #111;
     color: #fff;
@@ -55,8 +55,20 @@ main {
 
 .bookGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(calc(25% - 20px), 1fr));
     gap: 20px;
+}
+
+.bookGrid .card {
+    width: auto;
+    background: #f3f4f6;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid #eee;
 }
 
 .bookGrid > div {
@@ -64,6 +76,38 @@ main {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     background: #ffffff;
     border-radius: 15px;
+}
+
+.card__content {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+.card__content strong {
+    color: #333;
+}
+
+.status-btn {
+    background: #111;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.status-btn.is-read {
+    background: #dcfce7; /* soft green */
+    color: #166534; /* dark green text */
+    border: 1px solid #22c55e; /* green border */
+}
+
+/* NOT READ */
+.status-btn.not-read {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
 }
 
 /* --- The form to add a new book --- */
@@ -100,8 +144,11 @@ main {
 }
 
 .card_title {
-    font-size: 23px;
+    font-size: 1.25rem;
     font-weight: 900;
+    margin: 0;
+    color: #111;
+    line-height: 1.2;
     text-align: center;
 }
 
