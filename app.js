@@ -40,6 +40,11 @@ function addBookToLibrary() {
   const pages = document.getElementById("bookPages").value;
   const read = document.getElementById("alreadyRead").checked;
 
+  if (title === "" || author === "" || pages === "") {
+    alert("Please fill all fields");
+    return;
+  }
+
   const newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   createGrid();
