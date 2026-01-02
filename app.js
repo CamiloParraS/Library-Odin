@@ -54,7 +54,7 @@ function addBookToLibrary() {
 function createGrid() {
   bookGrid.innerHTML = "";
 
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
     const bookCard = document.createElement("div");
     bookCard.classList.add("card");
 
@@ -65,7 +65,11 @@ function createGrid() {
     <h3 class="card_title">'${book.title}'</h3>
     <p class="card__content"><strong>Author:</strong> ${book.author}</p>
     <p class="card__content"><strong>Pages:</strong> ${book.pages}</p>
-    <button class="status-btn ${statusClass}">${statusText}</button>`;
+    <button
+           class="status-btn ${statusClass}"
+           data-id="${book.id}">
+           ${statusText}
+         </button>`;
 
     bookGrid.appendChild(bookCard);
   });
@@ -83,4 +87,22 @@ function closeForm() {
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addBookToLibrary();
+});
+
+bookGrid.addEventListener("click", (e) => {
+  const statusBtn = e.target.closest(".status-btn");
+
+  if (statusBtn) {
+    const bookId = statusBtn.dataset.id;
+    const book = myLibrary.find((b) => b.id === bookId);
+    if (!book) return;
+
+    book.read = !book.read;
+
+    statusBtn.textContent = book.read ? "Read" : "Not Read";
+    statusBtn.classList.toggle("is-read", book.read);
+    statusBtn.classList.toggle("not-read", !book.read);
+
+    return;
+  }
 });
