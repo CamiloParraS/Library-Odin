@@ -56,7 +56,7 @@ function createGrid() {
 
   myLibrary.forEach((book, index) => {
     const bookCard = document.createElement("div");
-    bookCard.classList.add("card");
+    bookCard.classList.add("book-card");
 
     const statusClass = book.read ? "is-read" : "not-read";
     const statusText = book.read ? "Read" : "Not Read";
