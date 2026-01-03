@@ -65,11 +65,21 @@ function createGrid() {
     <h3 class="card_title">'${book.title}'</h3>
     <p class="card__content"><strong>Author:</strong> ${book.author}</p>
     <p class="card__content"><strong>Pages:</strong> ${book.pages}</p>
+
     <button
-           class="status-btn ${statusClass}"
-           data-id="${book.id}">
-           ${statusText}
-         </button>`;
+      class="status-btn ${statusClass}"
+      data-id="${book.id}">
+      ${statusText}
+    </button>
+
+    <button
+    class="cancelBook delete-book"
+    id="deleteBookBtn"
+    data-id="${book.id}">
+    Delete
+    </button>
+
+    `;
 
     bookGrid.appendChild(bookCard);
   });
@@ -91,6 +101,7 @@ submitBtn.addEventListener("click", (e) => {
 
 bookGrid.addEventListener("click", (e) => {
   const statusBtn = e.target.closest(".status-btn");
+  const deleteBtn = e.target.closest(".delete-book");
 
   if (statusBtn) {
     const bookId = statusBtn.dataset.id;
@@ -104,5 +115,14 @@ bookGrid.addEventListener("click", (e) => {
     statusBtn.classList.toggle("not-read", !book.read);
 
     return;
+  }
+
+  if (deleteBtn) {
+    const bookId = deleteBtn.dataset.id;
+    const index = myLibrary.findIndex((b) => b.id === bookId);
+    if (index === -1) return;
+
+    myLibrary.splice(index, 1);
+    deleteBtn.closest(".card").remove();
   }
 });
