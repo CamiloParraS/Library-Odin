@@ -76,11 +76,22 @@ function closeForm() {
 function renderLibrary() {
   bookGrid.innerHTML = "";
 
-  myLibrary.forEach((book, index) => {
-    const bookCard = createBookCard(book);
-    bookGrid.appendChild(bookCard);
-  });
-
+  if (myLibrary.length === 0) {
+    const emptyMessage = document.createElement("div");
+    emptyMessage.className = "empty-message";
+    emptyMessage.innerHTML = `
+      <p>Your library is empty!</p>
+      <span>Click "New Book" to get started.</span>
+      `;
+    bookGrid.appendChild(emptyMessage);
+  } 
+  
+  else {
+    myLibrary.forEach((book, index) => {
+      const bookCard = createBookCard(book);
+      bookGrid.appendChild(bookCard);
+    });
+  }
   updateStats();
 }
 
@@ -162,8 +173,11 @@ bookGrid.addEventListener("click", (e) => {
     myLibrary.splice(index, 1);
     deleteBtn.closest(".bookCard").remove();
     updateStats();
+    renderLibrary();
   }
 });
+
+renderLibrary();
 
 // ====== Testing ======
 function seedLibrary() {
