@@ -59,6 +59,10 @@ function updateStats() {
   renderStats(stats);
 }
 
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
 function closeForm() {
   form.classList.remove("active");
   document.getElementById("bookTitle").value = "";
@@ -140,12 +144,11 @@ bookGrid.addEventListener("click", (e) => {
     const book = myLibrary.find((b) => b.id === bookId);
     if (!book) return;
 
-    book.read = !book.read;
+    book.toggleRead();
 
     statusBtn.textContent = book.read ? "Read" : "Not Read";
     statusBtn.classList.toggle("is-read", book.read);
     statusBtn.classList.toggle("not-read", !book.read);
-
     updateStats();
 
     return;
