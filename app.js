@@ -37,11 +37,11 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
   const title = document.getElementById("bookTitle").value;
   const author = document.getElementById("bookAuthor").value;
-  const pages = document.getElementById("bookPages").value;
+  const pages = parseInt(document.getElementById("bookPages").value, 10);
   const read = document.getElementById("alreadyRead").checked;
 
-  if (title === "" || author === "" || pages === "") {
-    alert("Please fill all fields");
+  if (title === "" || author === "" || isNaN(pages)) {
+    alert("Please fill all fields correctly");
     return;
   }
 
@@ -56,7 +56,7 @@ function createGrid() {
 
   myLibrary.forEach((book, index) => {
     const bookCard = document.createElement("div");
-    bookCard.classList.add("book-card");
+    bookCard.classList.add("bookCard");
 
     const statusClass = book.read ? "is-read" : "not-read";
     const statusText = book.read ? "Read" : "Not Read";
@@ -83,6 +83,28 @@ function createGrid() {
 
     bookGrid.appendChild(bookCard);
   });
+  updateStats();
+}
+
+function updateStats() {
+  const stats = myLibrary.reduce(
+    (acc, book) => {
+      acc.total++;
+      acc.totalPages += Number(book.pages);
+      if (book.read) acc.read++;
+      else acc.notRead++;
+      return acc;
+    },
+    { total: 0, totalPages: 0, read: 0, notRead: 0 },
+  );
+  renderStats(stats);
+}
+
+function renderStats(stats) {
+  document.getElementById("statBooksTotal").textContent = stats.total;
+  document.getElementById("statBooksRead").textContent = stats.read;
+  document.getElementById("statBooksPending").textContent = stats.notRead;
+  document.getElementById("statPages").textContent = stats.totalPages;
 }
 
 function closeForm() {
@@ -114,6 +136,8 @@ bookGrid.addEventListener("click", (e) => {
     statusBtn.classList.toggle("is-read", book.read);
     statusBtn.classList.toggle("not-read", !book.read);
 
+    updateStats();
+
     return;
   }
 
@@ -123,6 +147,26 @@ bookGrid.addEventListener("click", (e) => {
     if (index === -1) return;
 
     myLibrary.splice(index, 1);
-    deleteBtn.closest(".card").remove();
+    deleteBtn.closest(".bookCard").remove();
+    updateStats();
   }
 });
+
+// ====== Testing, dont commit ======
+function seedLibrary() {
+  const sampleBooks = [
+    ["The Hobbit", "J.R.R. Tolkien", 310, true],
+    ["1984", "George Orwell", 328, false],
+    ["The Great Gatsby", "F. Scott Fitzgerald", 180, true],
+    ["Brave New World", "Aldous Huxley", 268, false],
+    ["Moby Dick", "Herman Melville", 635, false],
+    ["Frankenstein", "Mary Shelley", 280, true],
+  ];
+
+  sampleBooks.forEach((bookData) => {
+    const newBook = new Book(...bookData);
+    myLibrary.push(newBook);
+  });
+
+  createGrid();
+}
