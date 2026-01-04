@@ -59,7 +59,7 @@ main {
     gap: 20px;
 }
 
-.bookGrid .book-card {
+.bookGrid .bookCard {
     width: auto;
     background: #f3f4f6;
     border-radius: 20px;
@@ -157,6 +157,15 @@ main {
     gap: 12px;
 }
 
+.card__form label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: -8px;
+    margin-left: 4px;
+}
+
 .card__form input {
     outline: 0;
     background: #fff;
@@ -171,13 +180,22 @@ main {
     border-color: #111;
 }
 
+.card__form input:invalid {
+    border-left: 5px solid #e74c3c;
+    padding-left: 8px;
+    border-bottom: 1px solid #e74c3c;
+    background: linear-gradient(to right, #fdf2f2, white);
+}
+
 /* --- checkbox and the headache thah came with it --- */
 .isRead {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 5px 0;
+    margin-top: 5px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px dashed #ddd;
+    justify-content: space-between;
 }
 
 .isRead label {
