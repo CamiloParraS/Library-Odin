@@ -21,9 +21,9 @@
         </header>
 
         <main>
+            <h2 class="statsTitle">Stats</h2>
             <div class="stats">
-                <h2>INFO or Stats</h2>
-                <p>Total Books: <span id="statBooksTotal"></span></p>
+                <p>Total Books: <span id="statBooksTotal">None</span></p>
                 <p>Books Read: <span id="statBooksRead">None</span></p>
                 <p>
                     Books Pending to Read:
@@ -32,6 +32,7 @@
                 <p>Total Pages Read: <span id="statPages">None</span></p>
             </div>
 
+            <h2 class="libraryTitle">Library</h2>
             <div class="bookGrid" id="bookGrid"></div>
         </main>
 
@@ -45,15 +46,22 @@
                         placeholder="The Hobbit"
                         type="text"
                         id="bookTitle"
+                        required=""
                     />
                     <label for="bookAuthor">Author</label>
                     <input
                         placeholder="J.R.R. Tolkien"
                         type="text"
                         id="bookAuthor"
+                        required=""
                     />
                     <label for="bookPages">Pages</label>
-                    <input placeholder="310" type="number" id="bookPages" />
+                    <input
+                        placeholder="310"
+                        type="number"
+                        id="bookPages"
+                        required=""
+                    />
 
                     <div class="isRead">
                         <label for="alreadyRead">Already Read?</label>

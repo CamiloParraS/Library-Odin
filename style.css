@@ -46,7 +46,7 @@ body {
 
 /* --- Main, where the books should appear --- */
 main {
-    padding: 2rem 5%;
+    padding: 0 5% 2rem;
 }
 
 .stats {
@@ -61,7 +61,7 @@ main {
 
 .bookGrid .bookCard {
     width: auto;
-    background: #f3f4f6;
+    background: #fffbfb;
     border-radius: 20px;
     padding: 1.5rem;
     display: flex;
@@ -180,7 +180,7 @@ main {
     border-color: #111;
 }
 
-.card__form input:invalid {
+.card__form input:invalid:not(:placeholder-shown) {
     border-left: 5px solid #e74c3c;
     padding-left: 8px;
     border-bottom: 1px solid #e74c3c;
@@ -233,4 +233,52 @@ main {
 
 .cancelBook:hover {
     color: #333;
+}
+
+/* ======= Stats ====== */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.statsTitlem .libraryTitle {
+    font-size: 1.3rem;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.stats p {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    flex: 1;
+    min-width: 180px;
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 15px;
+    margin: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #eee;
+
+    gap: 8px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: #666;
+}
+
+.stats p span {
+    display: block;
+    color: #111;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.stats span {
+    font-size: 1.5rem;
+    color: #111;
+    font-weight: 900;
 }
