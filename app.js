@@ -23,6 +23,10 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
 // ====== Logic Funtions ======
 
 function getBookData() {
@@ -59,10 +63,6 @@ function updateStats() {
   renderStats(stats);
 }
 
-Book.prototype.toggleRead = function () {
-  this.read = !this.read;
-};
-
 function closeForm() {
   form.classList.remove("active");
   document.getElementById("bookTitle").value = "";
@@ -84,9 +84,7 @@ function renderLibrary() {
       <span>Click "New Book" to get started.</span>
       `;
     bookGrid.appendChild(emptyMessage);
-  } 
-  
-  else {
+  } else {
     myLibrary.forEach((book, index) => {
       const bookCard = createBookCard(book);
       bookGrid.appendChild(bookCard);
