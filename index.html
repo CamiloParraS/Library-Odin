@@ -1,84 +1,80 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Library</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="description" content="" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1
+  <head>
+    <meta charset="UTF-8" />
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@v3.0.1
 /modern-normalize.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" type="text/css" href="style.css" />
-        <link rel="icon" href="favicon.png" />
-    </head>
-    <body>
-        <header class="header">
-            <div class="container">
-                <h1>Library i guess</h1>
-                <button id="showFormBtn" class="addBtn">New Book</button>
-            </div>
-        </header>
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="favicon.png" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Library i guess</h1>
+        <button id="showFormBtn" class="addBtn">New Book</button>
+      </div>
+    </header>
 
-        <main>
-            <h2 class="statsTitle">Stats</h2>
-            <div class="stats">
-                <p>Total Books: <span id="statBooksTotal">None</span></p>
-                <p>Books Read: <span id="statBooksRead">None</span></p>
-                <p>
-                    Books Pending to Read:
-                    <span id="statBooksPending">None</span>
-                </p>
-                <p>Total Pages Read: <span id="statPages">None</span></p>
-            </div>
+    <main>
+      <h2 class="statsTitle">Stats</h2>
+      <div class="stats">
+        <p>Total Books: <span id="statBooksTotal">None</span></p>
+        <p>Books Read: <span id="statBooksRead">None</span></p>
+        <p>
+          Books Pending to Read:
+          <span id="statBooksPending">None</span>
+        </p>
+        <p>Total Pages Read: <span id="statPages">None</span></p>
+      </div>
 
-            <h2 class="libraryTitle">Library</h2>
-            <div class="bookGrid" id="bookGrid"></div>
-        </main>
+      <h2 class="libraryTitle">Library</h2>
+      <div class="bookGrid" id="bookGrid"></div>
+    </main>
 
-        <!-- Modified From Uiverse.io by satyamchaudharydev -->
-        <div id="newBookForm" class="newBook">
-            <div class="card">
-                <span class="card_title">Add New Book</span>
-                <div class="card__form">
-                    <label for="bookTitle">Title</label>
-                    <input
-                        placeholder="The Hobbit"
-                        type="text"
-                        id="bookTitle"
-                        required=""
-                    />
-                    <label for="bookAuthor">Author</label>
-                    <input
-                        placeholder="J.R.R. Tolkien"
-                        type="text"
-                        id="bookAuthor"
-                        required=""
-                    />
-                    <label for="bookPages">Pages</label>
-                    <input
-                        placeholder="310"
-                        type="number"
-                        id="bookPages"
-                        required=""
-                        min="1"
-                    />
+    <!-- Modified From Uiverse.io by satyamchaudharydev -->
+    <div id="newBookForm" class="newBook">
+      <div class="card">
+        <span class="card_title">Add New Book</span>
+        <div class="card__form">
+          <label for="bookTitle">Title</label>
+          <input
+            placeholder="The Hobbit"
+            type="text"
+            id="bookTitle"
+            required=""
+          />
+          <label for="bookAuthor">Author</label>
+          <input
+            placeholder="J.R.R. Tolkien"
+            type="text"
+            id="bookAuthor"
+            required=""
+          />
+          <label for="bookPages">Pages</label>
+          <input
+            placeholder="310"
+            type="number"
+            id="bookPages"
+            required=""
+            min="1"
+          />
 
-                    <div class="isRead">
-                        <label for="alreadyRead">Already Read?</label>
-                        <input
-                            type="checkbox"
-                            id="alreadyRead"
-                            class="checkbox"
-                        />
-                    </div>
-                    <button class="addBook">Add Book</button>
-                    <button class="cancelBook" id="closeFormBtn">Cancel</button>
-                </div>
-            </div>
+          <div class="isRead">
+            <label for="alreadyRead">Already Read?</label>
+            <input type="checkbox" id="alreadyRead" class="checkbox" />
+          </div>
+          <button class="addBook">Add Book</button>
+          <button class="cancelBook" id="closeFormBtn">Cancel</button>
         </div>
+      </div>
+    </div>
 
-        <script src="app.js"></script>
-    </body>
+    <script src="app.js"></script>
+  </body>
 </html>

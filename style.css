@@ -1,301 +1,301 @@
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: #f3f4f6;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #333;
-    padding: 0 2rem;
+  margin: 0;
+  min-height: 100vh;
+  background: #f3f4f6;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+  padding: 0 2rem;
 }
 
 /* --- Header --- */
 .header .container {
-    margin: 0 -2rem;
-    background: #ffffff;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  margin: 0 -2rem;
+  background: #ffffff;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header .container h1 {
-    margin: 0;
-    font-weight: 900;
+  margin: 0;
+  font-weight: 900;
 }
 
 .addBtn {
-    border: 0;
-    background: #111;
-    color: #fff;
-    padding: 0.8em 1.5em;
-    border-radius: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition:
-        transform 0.2s,
-        opacity 0.2s;
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 0.8em 1.5em;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
 }
 
 .addBtn:hover {
-    opacity: 0.8;
-    transform: scale(1.05);
+  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 /* --- Main, where the books should appear --- */
 main {
-    padding: 0 5% 2rem;
+  padding: 0 5% 2rem;
 }
 
 .stats {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .bookGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .bookGrid .bookCard {
-    width: auto;
-    background: #fffbfb;
-    border-radius: 20px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: auto;
+  background: #fffbfb;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .card__content {
-    font-size: 0.95rem;
-    color: #666;
-    margin: 0;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
 }
 
 .card__content strong {
-    color: #333;
+  color: #333;
 }
 
 .status-btn {
-    background: #111;
-    color: #fff;
-    padding: 0.8em 1.5em;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
+  background: #111;
+  color: #fff;
+  padding: 0.8em 1.5em;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .status-btn.is-read {
-    background: #dcfce7; /* soft green */
-    color: #166534; /* dark green text */
-    border: 1px solid #22c55e; /* green border */
+  background: #dcfce7; /* soft green */
+  color: #166534; /* dark green text */
+  border: 1px solid #22c55e; /* green border */
 }
 
 /* NOT READ */
 .status-btn.not-read {
-    background: #fee2e2;
-    color: #991b1b;
-    border: 1px solid #ef4444;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
 }
 
 /* --- The form to add a new book --- */
 .newBook {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(3px);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
 }
 
 .newBook.active {
-    display: flex;
+  display: flex;
 }
 
 /* From Uiverse.io by satyamchaudharydev */
 /* Add a book form */
 .card {
-    width: 280px;
-    background: #fff;
-    border-radius: 25px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  background: #fff;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card_title {
-    font-size: 1.25rem;
-    font-weight: 900;
-    margin: 0;
-    color: #111;
-    line-height: 1.2;
-    text-align: center;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0;
+  color: #111;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .card__form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .card__form label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: -8px;
-    margin-left: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: -8px;
+  margin-left: 4px;
 }
 
 .card__form input {
-    outline: 0;
-    background: #fff;
-    padding: 0.8em;
-    border-radius: 14px;
-    border: 1px solid #ddd;
-    color: black;
-    transition: border-color 0.2s;
+  outline: 0;
+  background: #fff;
+  padding: 0.8em;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  color: black;
+  transition: border-color 0.2s;
 }
 
 .card__form input:focus {
-    border-color: #111;
+  border-color: #111;
 }
 
 .card__form input:invalid:not(:placeholder-shown) {
-    border-left: 5px solid #e74c3c;
-    padding-left: 8px;
-    border-bottom: 1px solid #e74c3c;
-    background: linear-gradient(to right, #fdf2f2, white);
+  border-left: 5px solid #e74c3c;
+  padding-left: 8px;
+  border-bottom: 1px solid #e74c3c;
+  background: linear-gradient(to right, #fdf2f2, white);
 }
 
 /* --- checkbox and the headache thah came with it --- */
 .isRead {
-    display: flex;
-    margin-top: 5px;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 12px;
-    border: 1px dashed #ddd;
-    justify-content: space-between;
+  display: flex;
+  margin-top: 5px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px dashed #ddd;
+  justify-content: space-between;
 }
 
 .isRead label {
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .checkbox {
-    width: 18px;
-    height: 18px;
-    margin: 0 !important;
-    cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin: 0 !important;
+  cursor: pointer;
 }
 
 /* --- Form Button --- */
 .addBook {
-    border: 0;
-    background: #111;
-    color: #fff;
-    padding: 0.8em;
-    border-radius: 14px;
-    font-weight: bold;
-    cursor: pointer;
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 0.8em;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .cancelBook {
-    background: transparent;
-    border: none;
-    color: #888;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: underline;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .cancelBook:hover {
-    color: #333;
+  color: #333;
 }
 
 /* ======= Stats ====== */
 .stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
 .statsTitle .libraryTitle {
-    font-size: 1.3rem;
-    color: #111;
-    text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #111;
+  text-transform: uppercase;
 }
 
 .stats p {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    align-items: start;
-    flex: 1;
-    min-width: 180px;
-    background: #ffffff;
-    padding: 1.2rem;
-    border-radius: 15px;
-    margin: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    border: 1px solid #eee;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  flex: 1;
+  min-width: 180px;
+  background: #ffffff;
+  padding: 1.2rem;
+  border-radius: 15px;
+  margin: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid #eee;
 
-    gap: 8px;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 700;
-    color: #666;
+  gap: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: #666;
 }
 
 .stats p span {
-    display: block;
-    color: #111;
-    font-weight: 900;
-    line-height: 1;
+  display: block;
+  color: #111;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .stats span {
-    font-size: 1.5rem;
-    color: #111;
-    font-weight: 900;
+  font-size: 1.5rem;
+  color: #111;
+  font-weight: 900;
 }
 
 /* ====== No Books Message ====== */
 .empty-message {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    text-align: center;
-    padding: 3rem;
-    background: #fff;
-    border-radius: 20px;
-    border: 2px dashed #ccc;
-    color: #888;
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 20px;
+  border: 2px dashed #ccc;
+  color: #888;
 }
 
 .empty-message p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
-    color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
 }
