@@ -1,3 +1,5 @@
+import { ErrorValidation } from "./errorValidation.js";
+
 // ====== UI Controller ======
 
 class UI {
@@ -5,15 +7,24 @@ class UI {
     this.library = library;
 
     this.form = document.getElementById("newBookForm");
+    this.validator = new ErrorValidation(this.form);
     this.showFormBtn = document.getElementById("showFormBtn");
     this.closeFormBtn = document.getElementById("closeFormBtn");
     this.bookGrid = document.getElementById("bookGrid");
     this.submitBtn = document.querySelector(".addBook");
+    this.titleInput = document.getElementById("bookTitle");
+    this.authorInput = document.getElementById("bookAuthor");
+    this.pagesInput = document.getElementById("bookPages");
   }
 
   init() {
     this.bindEvents();
     this.render();
+    this.validator.bindAll([
+      this.titleInput,
+      this.authorInput,
+      this.pagesInput,
+    ]);
   }
 
   bindEvents() {
@@ -76,8 +87,13 @@ class UI {
     const pages = parseInt(document.getElementById("bookPages").value, 10);
     const read = document.getElementById("alreadyRead").checked;
 
-    if (title === "" || author === "" || isNaN(pages)) {
-      alert("Please fill all fields correctly");
+    if (
+      !this.validator.validateAll([
+        this.titleInput,
+        this.authorInput,
+        this.pagesInput,
+      ])
+    ) {
       return;
     }
 
@@ -92,6 +108,7 @@ class UI {
     document.getElementById("bookAuthor").value = "";
     document.getElementById("bookPages").value = "";
     document.getElementById("alreadyRead").checked = false;
+    this.validator.clearErrors();
   }
 
   render() {
